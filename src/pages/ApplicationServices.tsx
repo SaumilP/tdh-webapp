@@ -195,7 +195,7 @@ function ApplicationServices() {
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Performance Boost</h3>
-                <p className="text-gray-600">50% improvement in application performance</p>
+                <p className="text-gray-600">Over 50% improvement in application performance</p>
               </div>
             </div>
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
