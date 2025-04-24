@@ -1,11 +1,12 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { Code2, Laptop2, AppWindow, TestTubes, Phone, Mail } from 'lucide-react';
+import { Code2, Laptop2, AppWindow, TestTubes, Phone, Mail, Users2 } from 'lucide-react';
 import SoftwareDevelopment from './pages/SoftwareDevelopment';
 import ITConsulting from './pages/ITConsulting';
 import ApplicationServices from './pages/ApplicationServices';
 import TestingQA from './pages/TestingQA';
 import Contact from './pages/Contact';
+import StaffAugmentation from './pages/StaffAugmentation';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/services/it-consulting" element={<ITConsulting />} />
       <Route path="/services/application-services" element={<ApplicationServices />} />
       <Route path="/services/testing-qa" element={<TestingQA />} />
+      <Route path="/services/staff-augmentation" element={<StaffAugmentation />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/" element={
         <div className="min-h-screen bg-white">
@@ -22,7 +24,7 @@ function App() {
             <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
               <Link to="/" className="flex items-center">
                 {/* <Code2 className="h-8 w-8 text-[#003B73]" /> */}
-                <img src="/images/main-logo-v1.webp"alt="logo-v1" className="h-16 w-16" />
+                <img src="/images/main-logo-v2.webp"alt="logo-v2" className="h-10 w-10" />
                 <span className="ml-2 text-xl font-bold">
                   <span className="text-[#003B73]">TDH</span>{' '}
                   <span className="text-[#1992D4]">ENTERPRISES</span>
@@ -103,6 +105,13 @@ function App() {
                     We provide comprehensive QA and testing outsourcing services, supporting the development of new QA strategies or enhancing existing frameworks. Our team also assists with the setup and advancement of Testing Centers of Excellence (TCoE). We conduct end-to-end testing of mobile, web, and desktop applications across every stage of the development lifecycle.
                   </p>
                 </Link>
+                <Link to="/services/staff-augmentation" className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow md:col-span-2">
+                  <Users2 className="h-12 w-12 text-[#1992D4] mb-4" />
+                  <h3 className="text-xl font-bold mb-4">IT Staff Augmentation Services</h3>
+                  <p className="text-gray-600">
+                    We offer expert IT Staff Augmentation Services tailored to your business needs. Our seasoned professionals bring deep expertise across a wide range of technologies and industries, seamlessly integrating into your teams to deliver high-impact results. We provide agile, scalable, and cost-effective solutions that enable you to meet evolving project demands without the overhead of permanent hires. Beyond staff augmentation, our comprehensive services include software development, UI/UX design, and technology consulting—ensuring all your IT requirements are met under one roof. Partner with TDH Enterprises to accelerate innovation, enhance efficiency, and drive sustainable growth.
+                  </p>
+                </Link>
               </div>
             </div>
           </section>
@@ -143,6 +152,7 @@ function App() {
                     <li><Link to="/services/it-consulting" className="hover:text-white">IT Consulting</Link></li>
                     <li><Link to="/services/application-services" className="hover:text-white">Application Services</Link></li>
                     <li><Link to="/services/testing-qa" className="hover:text-white">Testing & QA</Link></li>
+                    <li><Link to="/services/staff-augmentation" className="hover:text-white">Staff Augmentation</Link></li>
                   </ul>
                 </div>
                 <div>

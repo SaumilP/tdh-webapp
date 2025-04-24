@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Code2, 
+  // Code2, 
   Clock, 
   UserCircle, 
   Heart, 
   MapPin, 
   Phone, 
   Mail,
-  Upload,
-  Quote
+  Upload
+  // , Quote
 } from 'lucide-react';
 
 function Contact() {
@@ -23,11 +23,34 @@ function Contact() {
     file: null as File | null,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Handle form submission
+  //   console.log('Form submitted:', formData);
+  // };
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+    });
+    const result = await response.json();
+    if (result.success) {
+        console.log(result);
+    }
+}
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -42,7 +65,7 @@ function Contact() {
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
             {/* <Code2 className="h-8 w-8 text-[#003B73]" /> */}
-            <img src="/images/main-logo-v1.webp"alt="logo-v1" className="h-16 w-16" />
+            <img src="/images/main-logo-v2.webp"alt="logo-v2" className="h-10 w-10" />
             <span className="ml-2 text-xl font-bold">
               <span className="text-[#003B73]">TDH</span>{' '}
               <span className="text-[#1992D4]">ENTERPRISES</span>
@@ -103,7 +126,9 @@ function Contact() {
                   <div className="flex items-start">
                     <MapPin className="h-5 w-5 text-[#005BAA] mt-1 mr-3" />
                     <p className="text-gray-600">
-                      1 Stone Manor, 46th North Road, Morningside 2196, Johannesburg, Gauteng, South Africa
+                      1 Stone Manor, 46th North Road, 
+                      Morningside 2196, Johannesburg, 
+                      Gauteng, South Africa
                     </p>
                   </div>
                   <div className="flex items-center">

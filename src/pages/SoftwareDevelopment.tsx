@@ -10,7 +10,7 @@ function SoftwareDevelopment() {
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
             {/* <Code2 className="h-8 w-8 text-[#003B73]" /> */}
-            <img src="/images/main-logo-v1.webp"alt="logo-v1" className="h-16 w-16" />
+            <img src="/images/main-logo-v2.webp"alt="logo-v2" className="h-10 w-10" />
             <span className="ml-2 text-xl font-bold">
               <span className="text-[#003B73]">TDH</span>{' '}
               <span className="text-[#1992D4]">ENTERPRISES</span>
