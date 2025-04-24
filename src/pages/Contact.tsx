@@ -41,7 +41,8 @@ function Contact() {
       <header className="fixed w-full bg-white shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <Code2 className="h-8 w-8 text-[#003B73]" />
+            {/* <Code2 className="h-8 w-8 text-[#003B73]" /> */}
+            <img src="/images/main-logo-v1.webp"alt="logo-v1" className="h-16 w-16" />
             <span className="ml-2 text-xl font-bold">
               <span className="text-[#003B73]">TDH</span>{' '}
               <span className="text-[#1992D4]">ENTERPRISES</span>
@@ -102,12 +103,12 @@ function Contact() {
                   <div className="flex items-start">
                     <MapPin className="h-5 w-5 text-[#005BAA] mt-1 mr-3" />
                     <p className="text-gray-600">
-                      10 6th Street, Morningside, Sandton, Johannesburg
+                      1 Stone Manor, 46th North Road, Morningside 2196, Johannesburg, Gauteng, South Africa
                     </p>
                   </div>
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-[#005BAA] mr-3" />
-                    <p className="text-gray-600">+27 11 123 4567</p>
+                    <p className="text-gray-600">+27 79 935 3985</p>
                   </div>
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-[#005BAA] mr-3" />
@@ -238,7 +239,7 @@ function Contact() {
           </div>
 
           {/* Testimonial Section */}
-          <div className="mt-16">
+          {/* <div className="mt-16">
             <h2 className="text-2xl font-bold text-center mb-8">What Our Clients Say</h2>
             <div className="bg-white rounded-xl shadow-lg p-8">
               <div className="flex items-start gap-6">
@@ -260,7 +261,7 @@ function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

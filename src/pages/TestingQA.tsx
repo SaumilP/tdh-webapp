@@ -9,7 +9,8 @@ function TestingQA() {
       <header className="fixed w-full bg-white shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <Code2 className="h-8 w-8 text-[#003B73]" />
+            {/* <Code2 className="h-8 w-8 text-[#003B73]" /> */}
+            <img src="/images/main-logo-v1.webp"alt="logo-v1" className="h-16 w-16" />
             <span className="ml-2 text-xl font-bold">
               <span className="text-[#003B73]">TDH</span>{' '}
               <span className="text-[#1992D4]">ENTERPRISES</span>
@@ -233,7 +234,7 @@ function TestingQA() {
             </div>
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img 
-                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg" 
+                src="/images/pexels-photo-3182812.webp" 
                 alt="Banking App Testing"
                 className="w-full h-48 object-cover"
               />
@@ -244,7 +245,7 @@ function TestingQA() {
             </div>
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img 
-                src="https://images.pexels.com/photos/3183132/pexels-photo-3183132.jpeg" 
+                src="/images/pexels-photo-3183132.webp" 
                 alt="Healthcare Testing"
                 className="w-full h-48 object-cover"
               />

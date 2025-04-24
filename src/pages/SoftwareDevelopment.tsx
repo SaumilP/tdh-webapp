@@ -9,7 +9,8 @@ function SoftwareDevelopment() {
       <header className="fixed w-full bg-white shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <Code2 className="h-8 w-8 text-[#003B73]" />
+            {/* <Code2 className="h-8 w-8 text-[#003B73]" /> */}
+            <img src="/images/main-logo-v1.webp"alt="logo-v1" className="h-16 w-16" />
             <span className="ml-2 text-xl font-bold">
               <span className="text-[#003B73]">TDH</span>{' '}
               <span className="text-[#1992D4]">ENTERPRISES</span>
@@ -28,7 +29,7 @@ function SoftwareDevelopment() {
       <section className="pt-24 relative">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg"
+            src="/images/pexels-photo-3183153.webp"
             alt="Software Development"
             className="w-full h-full object-cover"
           />
@@ -147,7 +148,7 @@ function SoftwareDevelopment() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img 
-                src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" 
+                src="/images/pexels-photo-3183150.webp" 
                 alt="Project 1"
                 className="w-full h-48 object-cover"
               />
@@ -158,7 +159,7 @@ function SoftwareDevelopment() {
             </div>
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img 
-                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg" 
+                src="/images/pexels-photo-3182812.webp" 
                 alt="Project 2"
                 className="w-full h-48 object-cover"
               />
@@ -169,7 +170,7 @@ function SoftwareDevelopment() {
             </div>
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img 
-                src="https://images.pexels.com/photos/3183132/pexels-photo-3183132.jpeg" 
+                src="/images/pexels-photo-3183132.webp" 
                 alt="Project 3"
                 className="w-full h-48 object-cover"
               />
@@ -211,17 +212,17 @@ function SoftwareDevelopment() {
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-bold mb-4">Basic</h3>
               <p className="text-gray-600 mb-4">Simple applications with standard features</p>
-              <p className="text-3xl font-bold text-[#1992D4]">$10k - $30k</p>
+              <p className="text-3xl font-bold text-[#1992D4]">ZAR 100k - ZAR 500k</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm border-2 border-[#1992D4]">
               <h3 className="text-xl font-bold mb-4">Professional</h3>
               <p className="text-gray-600 mb-4">Complex applications with custom features</p>
-              <p className="text-3xl font-bold text-[#1992D4]">$30k - $100k</p>
+              <p className="text-3xl font-bold text-[#1992D4]">ZAR 500k - ZAR 5m</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-bold mb-4">Enterprise</h3>
               <p className="text-gray-600 mb-4">Large-scale enterprise solutions</p>
-              <p className="text-3xl font-bold text-[#1992D4]">$100k+</p>
+              <p className="text-3xl font-bold text-[#1992D4]">ZAR 5m+</p>
             </div>
           </div>
         </div>

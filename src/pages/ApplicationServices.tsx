@@ -9,7 +9,8 @@ function ApplicationServices() {
       <header className="fixed w-full bg-white shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <Code2 className="h-8 w-8 text-[#003B73]" />
+            {/* <Code2 className="h-8 w-8 text-[#003B73]" /> */}
+            <img src="/images/main-logo-v1.webp"alt="logo-v1" className="h-16 w-16" />
             <span className="ml-2 text-xl font-bold">
               <span className="text-[#003B73]">TDH</span>{' '}
               <span className="text-[#1992D4]">ENTERPRISES</span>
@@ -28,7 +29,7 @@ function ApplicationServices() {
       <section className="pt-24 relative">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg"
+            src="/images/pexels-photo-1181467.webp"
             alt="Application Services"
             className="w-full h-full object-cover"
           />
@@ -177,7 +178,7 @@ function ApplicationServices() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img 
-                src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" 
+                src="/images/pexels-photo-3183150.webp" 
                 alt="Cloud Migration"
                 className="w-full h-48 object-cover"
               />
@@ -188,7 +189,7 @@ function ApplicationServices() {
             </div>
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img 
-                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg" 
+                src="/images/pexels-photo-3182812.webp" 
                 alt="Performance Optimization"
                 className="w-full h-48 object-cover"
               />
@@ -199,7 +200,7 @@ function ApplicationServices() {
             </div>
             <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img 
-                src="https://images.pexels.com/photos/3183132/pexels-photo-3183132.jpeg" 
+                src="/images/pexels-photo-3183132.webp" 
                 alt="Security Enhancement"
                 className="w-full h-48 object-cover"
               />

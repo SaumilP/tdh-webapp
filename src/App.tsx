@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { Code2, Laptop2, AppWindow, TestTubes } from 'lucide-react';
+import { Code2, Laptop2, AppWindow, TestTubes, Phone, Mail } from 'lucide-react';
 import SoftwareDevelopment from './pages/SoftwareDevelopment';
 import ITConsulting from './pages/ITConsulting';
 import ApplicationServices from './pages/ApplicationServices';
@@ -21,7 +21,8 @@ function App() {
           <header className="fixed w-full bg-white shadow-sm z-50">
             <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
               <Link to="/" className="flex items-center">
-                <Code2 className="h-8 w-8 text-[#003B73]" />
+                {/* <Code2 className="h-8 w-8 text-[#003B73]" /> */}
+                <img src="/images/main-logo-v1.webp"alt="logo-v1" className="h-16 w-16" />
                 <span className="ml-2 text-xl font-bold">
                   <span className="text-[#003B73]">TDH</span>{' '}
                   <span className="text-[#1992D4]">ENTERPRISES</span>
@@ -60,7 +61,7 @@ function App() {
                 </div>
                 <div className="relative">
                   <img 
-                    src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+                    src="/images/pexels-photo-3183150.webp" 
                     alt="Team working on software development"
                     className="rounded-2xl shadow-xl w-full"
                   />
@@ -147,8 +148,18 @@ function App() {
                 <div>
                   <h4 className="font-bold mb-4">Contact</h4>
                   <ul className="space-y-2 text-gray-300">
-                    <li>contact@tdhenterprises.co.za</li>
-                    <li>+27 11 123 4567</li>
+                    <li>
+                      <div className="flex items-center">
+                        <Mail className="h-5 w-5 text-gray-300 mr-3" />
+                        <p className="text-gray-300">contact@tdhenterprises.co.za</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex items-center">
+                        <Phone className="h-5 w-5 text-gray-300 mr-3" />
+                        <p className="text-gray-300">+27 79 935 3985</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
                 <div>
@@ -160,7 +171,7 @@ function App() {
                 </div>
               </div>
               <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-                <p>&copy; 2025 TDH Enterprises. All rights reserved.</p>
+                <p>&copy; 2025 TDH Enterprises (Pty) Ltd. All rights reserved.</p>
               </div>
             </div>
           </footer>
