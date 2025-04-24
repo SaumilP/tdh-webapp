@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Toaster, toast } from 'react-hot-toast';
 import { 
   // Code2, 
   Clock, 
@@ -8,6 +9,7 @@ import {
   MapPin, 
   Phone, 
   Mail,
+  Loader2,
   Upload
   // , Quote
 } from 'lucide-react';
@@ -23,34 +25,52 @@ function Contact() {
     file: null as File | null,
   });
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   // Handle form submission
-  //   console.log('Form submitted:', formData);
-  // };
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
+    try {
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`, {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
         },
-        body: json
-    });
-    const result = await response.json();
-    if (result.success) {
-        console.log(result);
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          company: formData.company,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          needsNDA: formData.needsNDA,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      toast.success('Message sent successfully! We will get back to you soon.');
+      
+      // Reset form
+      setFormData({
+        fullName: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: '',
+        needsNDA: false,
+        file: null,
+      });
+    } catch (error) {
+      toast.error('Failed to send message. Please try again later.');
+      console.error('Error sending message:', error);
+    } finally {
+      setIsSubmitting(false);
     }
-}
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -60,6 +80,7 @@ function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e5f1fb] to-white">
+      <Toaster position="top-right" />
       {/* Header */}
       <header className="fixed w-full bg-white shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
@@ -255,9 +276,17 @@ function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#f5b301] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#e5a701] transition-colors"
+                  disabled={isSubmitting} 
+                  className="w-full bg-[#f5b301] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#e5a701] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="animate-spin h-5 w-5 mr-2" />
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
                 </button>
               </form>
             </div>

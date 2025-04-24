@@ -7,8 +7,6 @@ import ApplicationServices from './pages/ApplicationServices';
 import TestingQA from './pages/TestingQA';
 import Contact from './pages/Contact';
 import StaffAugmentation from './pages/StaffAugmentation';
-import { Analytics } from "@vercel/analytics/react";
-
 function App() {
   return (
     <Routes>
@@ -190,7 +188,6 @@ function App() {
       } />
     </Routes>
   );
-  <Analytics />
 }
 
 export default App;
