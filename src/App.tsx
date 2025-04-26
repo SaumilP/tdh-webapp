@@ -134,7 +134,7 @@ function App() {
           {/* Footer */}
           <footer className="bg-[#003B73] text-white py-12">
             <div className="container mx-auto px-6">
-              <div className="grid md:grid-cols-4 gap-8">
+              <div className="grid md:grid-cols-3 gap-8">
                 <div>
                   <div className="flex items-center mb-4">
                     <Code2 className="h-6 w-6" />
