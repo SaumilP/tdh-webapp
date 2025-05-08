@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { Code2, Laptop2, AppWindow, TestTubes, Phone, Mail, Users2 } from 'lucide-react';
+import { Code2, Laptop2, AppWindow, TestTubes, Mail, Users2 } from 'lucide-react';
 import SoftwareDevelopment from './pages/SoftwareDevelopment';
 import ITConsulting from './pages/ITConsulting';
 import ApplicationServices from './pages/ApplicationServices';
@@ -163,12 +163,12 @@ function App() {
                         <p className="text-gray-300">contact@tdhenterprises.co.za</p>
                       </div>
                     </li>
-                    <li>
+                    {/* <li>
                       <div className="flex items-center">
                         <Phone className="h-5 w-5 text-gray-300 mr-3" />
                         <p className="text-gray-300">+27 79 935 3985</p>
                       </div>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
                 {/* <div>
