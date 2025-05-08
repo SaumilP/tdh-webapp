@@ -32,7 +32,7 @@ function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`, {
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email-worker`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
@@ -152,10 +152,10 @@ function Contact() {
                       Gauteng, South Africa
                     </p>
                   </div>
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <Phone className="h-5 w-5 text-[#005BAA] mr-3" />
                     <p className="text-gray-600">+27 79 935 3985</p>
-                  </div>
+                  </div> */}
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-[#005BAA] mr-3" />
                     <p className="text-gray-600">contact@tdhenterprises.co.za</p>
