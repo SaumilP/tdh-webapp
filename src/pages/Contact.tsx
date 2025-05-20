@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
@@ -32,20 +34,28 @@ function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email-worker`, {
+      // SUPABASE VERSION
+      // const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email-worker`, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     fullName: formData.fullName,
+      //     company: formData.company,
+      //     email: formData.email,
+      //     phone: formData.phone,
+      //     message: formData.message,
+      //     needsNDA: formData.needsNDA,
+      //   }),
+      // });
+
+      // RESEND version
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          company: formData.company,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          needsNDA: formData.needsNDA,
-        }),
+        headers: { 'Content-Type': 'multipart/form-data'},
+        body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
@@ -114,7 +124,7 @@ function Contact() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Quick Response</h3>
                     <p className="text-gray-600">
-                      We typically reply within 1 business hour and can sign an NDA the same day to get started.
+                      We typically reply within 4 business hour and can sign an NDA the same day to get started.
                     </p>
                   </div>
                 </div>
@@ -255,6 +265,7 @@ function Contact() {
 
                 <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                   <input
+                    name="file"
                     type="file"
                     id="file-upload"
                     className="hidden"
